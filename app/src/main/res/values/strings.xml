@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">chatAIgpt</string>
+    <string name="ask_your_question">Ask your question</string>
+    <string name="welcome">YOUR AI CHAT BOT\nPOWERED BY GPT 3</string>
+</resources>
