@@ -31,15 +31,15 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Message message = messageList.get(position);
-        if(message.getSentby().equals(Message.SENT_BY_US)){
+        if(message.getRole().equals("user")){
             holder.leftChatView.setVisibility(View.GONE);
             holder.rightChatView.setVisibility(View.VISIBLE);
-            holder.rightTextView.setText(message.getMessage());
+            holder.rightTextView.setText(message.getContent());
         }
         else{
             holder.rightChatView.setVisibility(View.GONE);
             holder.leftChatView.setVisibility(View.VISIBLE);
-            holder.leftTextView.setText(message.getMessage());
+            holder.leftTextView.setText(message.getContent());
         }
     }
 

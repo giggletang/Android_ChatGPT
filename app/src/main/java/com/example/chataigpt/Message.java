@@ -1,30 +1,30 @@
 package com.example.chataigpt;
 
+
+import com.google.gson.annotations.SerializedName;
+
 public class Message {
-    public static String SENT_BY_US = "ME";
-    public static  String SENT_BY_GPT = "BOT";
 
-    String message;
-    String sentby;
+    @SerializedName("role")
+    private String role;
+    @SerializedName("content")
+    private String content;
 
-    public Message(String message, String sentby) {
-        this.message = message;
-        this.sentby = sentby;
+
+    public Message(String role, String content) {
+        this.role = role;
+        this.content = content;
+
     }
 
-    public String getMessage() {
-        return message;
+
+
+    public String getRole() {
+        return role;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public String getContent(){
+        return content;
     }
 
-    public String getSentby() {
-        return sentby;
-    }
-
-    public void setSentby(String sentby) {
-        this.sentby = sentby;
-    }
 }
