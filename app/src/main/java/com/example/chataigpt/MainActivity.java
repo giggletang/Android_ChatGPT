@@ -35,11 +35,6 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Message> conversation;
     MessageAdapter messageAdapter;
 
-    // OKhttp post to server
-//    public static final MediaType JSON
-//            = MediaType.get("application/json; charset=utf-8");
-//    final OkHttpClient client = new OkHttpClient();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,69 +146,4 @@ public class MainActivity extends AppCompatActivity {
                 addResponse("Failed to load response due to "+ t.getMessage());
             }
         });
-
-//        JsonObject jsonBody = new JsonObject();
-//        JsonArray jsonArray = new JsonArray();
-//
-//
-//        try {
-//            for(int i=0; i<conversation.size(); i++){
-//                JsonObject message_object = new JsonObject();
-//                message_object.addProperty("role", conversation.get(i).role);
-//                message_object.addProperty("content", conversation.get(i).content);
-//                jsonArray.add(message_object);
-//            }
-//
-//            jsonBody.addProperty("model", "gpt-3.5-turbo");
-//            jsonBody.add("messages",jsonArray);
-//            jsonBody.addProperty("max_token",4000);
-//            jsonBody.addProperty("temperature",0.5);
-//        } catch (JsonIOException e) {
-//            e.printStackTrace();
-//        }
-
-
-
-
-//        RequestBody body =RequestBody.create(jsonBody.toString(), JSON);
-//        Request request = new Request.Builder()
-//                .url("https://api.openai.com/v1/chat/completions")
-//                .header("Authorization", "Bearer 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")
-//                .header("Content-Type", "application/json")
-//                .post(body)
-//                .build();
-
-
-
-//        client.newCall(request).enqueue(new Callback() {
-//            @Override
-//            public void onFailure(@NonNull Call call, @NonNull IOException e) {
-//                addResponse("Failed to load response due to "+ e.getMessage());
-//            }
-//
-//            @Override
-//            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-//                if(response.isSuccessful()){
-//                    JSONObject jsonObject= null;
-//                    try {
-//                        jsonObject = new JSONObject(response.body().string());
-//                        JSONArray choices = jsonObject.getJSONArray("choices");
-//                        JSONObject first = choices.getJSONObject(0);
-//                        JSONObject message_return = first.getJSONObject("message");
-//                        String result = message_return.getString("content");
-//
-//                        addResponse(result.trim());
-//
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
-//
-//                }
-//                else{
-//                    addResponse("Finally Failed to load response due to " + response.body().string());
-//                }
-//            }
-//        });
-
-    }
 }
